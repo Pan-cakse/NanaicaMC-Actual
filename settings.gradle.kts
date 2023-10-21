@@ -9,6 +9,6 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
 }
 
-rootProject.name = "forktest"
+rootProject.name = "nanaica"
 
-include("forktest-api", "forktest-server")
+include("nanaica-api", "nanaica-server")

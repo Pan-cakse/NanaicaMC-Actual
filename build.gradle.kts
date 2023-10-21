@@ -54,7 +54,7 @@ subprojects {
 }
 
 paperweight {
-    serverProject.set(project(":forktest-server"))
+    serverProject.set(project(":nanaica-server"))
 
     remapRepo.set(paperMavenPublicUrl)
     decompileRepo.set(paperMavenPublicUrl)
@@ -62,10 +62,10 @@ paperweight {
     usePaperUpstream(providers.gradleProperty("paperRef")) {
         withPaperPatcher {
             apiPatchDir.set(layout.projectDirectory.dir("patches/api"))
-            apiOutputDir.set(layout.projectDirectory.dir("forktest-api"))
+            apiOutputDir.set(layout.projectDirectory.dir("nanaica-api"))
 
             serverPatchDir.set(layout.projectDirectory.dir("patches/server"))
-            serverOutputDir.set(layout.projectDirectory.dir("forktest-server"))
+            serverOutputDir.set(layout.projectDirectory.dir("nanaica-server"))
         }
     }
 }
@@ -75,7 +75,7 @@ paperweight {
 //
 
 tasks.generateDevelopmentBundle {
-    apiCoordinates.set("com.example.paperfork:forktest-api")
+    apiCoordinates.set("org.nanaica.nanaica.nanaica-api")
     mojangApiCoordinates.set("io.papermc.paper:paper-mojangapi")
     libraryRepositories.set(
         listOf(
@@ -88,7 +88,7 @@ tasks.generateDevelopmentBundle {
 
 allprojects {
     // Publishing API:
-    // ./gradlew :ForkTest-API:publish[ToMavenLocal]
+    // ./gradlew :Nanaica-API:publish[ToMavenLocal]
     publishing {
         repositories {
             maven {
